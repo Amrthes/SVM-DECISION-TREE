@@ -1,6 +1,5 @@
 # Customer Churn Prediction (SVM vs Decision Tree)
 
-## 📌 Overview
 
 This project predicts whether a customer will **churn (leave a service)** based on billing and usage data.
 It compares two models: **Support Vector Machine (SVM)** and **Decision Tree Classifier**.
