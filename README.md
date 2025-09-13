@@ -1,5 +1,3 @@
----
-
 # Customer Churn Prediction (SVM vs Decision Tree)
 
 ## 📌 Overview
