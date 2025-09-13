@@ -1,88 +1,106 @@
-# Customer Churn Prediction (SVM vs Decision Tree)
+# Customer Churn Prediction 📊
 
+This project predicts customer churn using **Support Vector Machine (SVM)** and **Decision Tree** models.
+It is built with **Python, Scikit-learn, and Streamlit (for app deployment)**.
 
-This project predicts whether a customer will **churn (leave a service)** based on billing and usage data.
-It compares two models: **Support Vector Machine (SVM)** and **Decision Tree Classifier**.
+---
+
+## 🚀 Features
+
+* Preprocessed telecom dataset for churn prediction
+* Trained models:
+
+  * Decision Tree (`dt_model.pkl`)
+  * Support Vector Machine (`svm_model.pkl`)
+* Scaler (`scaler.pkl`) for consistent input transformation
+* Streamlit app (`app.py`) for interactive prediction
+* Training script (`train_and_save_models.py`)
+
+---
+
+## 📂 Project Structure
+
+```
+customer-churn/
+│── app.py                  # Streamlit app for predictions
+│── train_and_save_models.py # Script to train and save models
+│── dt_model.pkl            # Saved Decision Tree model
+│── svm_model.pkl           # Saved SVM model
+│── scaler.pkl              # Saved Scaler
+│── model.sav               # Backup model file
+│── requirements.txt        # Project dependencies
+│── main.ipynb              # Jupyter notebook (EDA & training)
+│── README.md               # Project documentation
+```
+
+---
+
+## ⚙️ Installation
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/Amrthes/SVM-DECISION-TREE.git
+cd SVM-DECISION-TREE
+```
+
+2. Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+venv\Scripts\activate   # For Windows
+source venv/bin/activate  # For Linux/Mac
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Usage
+
+### Train models (if you want to retrain):
+
+```bash
+python train_and_save_models.py
+```
+
+### Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+Then open the local URL (default: [http://localhost:8501](http://localhost:8501)) in your browser.
 
 ---
 
 ## 📊 Dataset
 
-* **File:** `customer_churn_tree_svm (1).csv`
-* **Shape:** 150 rows × 5 columns
-* **Features:**
+The dataset used includes customer information such as:
 
-  * `monthly_charges` – Monthly billing amount
-  * `tenure_months` – Number of months subscribed
-  * `contract_type` – Type of contract (0,1,2 encoding)
-  * `support_calls` – Number of support calls made
-* **Target:** `churn` (0 = no churn, 1 = churn)
+* **Monthly Charges**
+* **Tenure (Months)**
+* **Contract Type**
+* **Support Calls**
+* **Churn (0 = No, 1 = Yes)**
 
 ---
 
-## 🔎 Exploratory Data Analysis
+## 📌 Future Improvements
 
-* No missing values or duplicates.
-* Skewness checked → churn column is highly skewed.
-* Histograms & boxplots show feature distributions.
-
----
-
-## ⚙️ Modeling
-
-* **Train-Test Split:** 75% train, 25% test (stratified).
-* **Scaling:** StandardScaler applied to features for SVM.
-* **Models Used:**
-
-  * SVM (RBF kernel, probability=True)
-  * Decision Tree (default params)
+* Add more ML models (Random Forest, XGBoost)
+* Improve feature engineering
+* Deploy on **Heroku/Render/Streamlit Cloud**
 
 ---
 
-## 📈 Results
+## 🧑‍💻 Author
 
-Both models achieved **perfect performance (100%)** on the dataset:
-
-| Model            | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-| ---------------- | -------- | --------- | ------ | -------- | ------- |
-| **SVM**          | 1.0      | 1.0       | 1.0    | 1.0      | 1.0     |
-| **DecisionTree** | 1.0      | 1.0       | 1.0    | 1.0      | 1.0     |
-
-* **Confusion Matrices** plotted for both models.
-* **ROC Curves** show perfect separation.
-
----
-
-## 🔮 Prediction Example
-
-For a new customer:
-
-```python
-monthly_charges = 55
-tenure_months = 24
-contract_type = 2
-support_calls = 1
-```
-
-✅ Both SVM & Decision Tree predict: **0 → No Churn**
-
----
-
-## 🚀 How to Run
-
-1. Install dependencies:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
-2. Place dataset in working directory.
-3. Run the Jupyter Notebook / Python script.
-
----
-
-⚠️ **Note:** The dataset is small (150 rows).
-That’s why both models show **overfitting/perfect accuracy**.
-For real-world usage, a larger dataset is needed.
+👤 **Amr**
+[GitHub](https://github.com/Amrthes)
 
 ---
