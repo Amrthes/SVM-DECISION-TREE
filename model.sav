@@ -1,0 +1,15 @@
+import pickle
+
+# Save SVM
+with open("svm_model.pkl", "wb") as f:
+    pickle.dump(svm_model, f)
+
+# Save Decision Tree
+with open("dt_model.pkl", "wb") as f:
+    pickle.dump(dt_model, f)
+
+# Save Scaler (needed for SVM inputs)
+with open("scaler.pkl", "wb") as f:
+    pickle.dump(scaler, f)
+
+print("Models & scaler saved successfully!")
